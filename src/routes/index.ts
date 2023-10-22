@@ -1,4 +1,4 @@
-import { Router, static as expressStatic } from 'express';
+import { Request, Response, Router, static as expressStatic } from 'express';
 import path from 'path';
 import { handleLogin, handleCallback } from '../controllers/loginController';
 
@@ -10,8 +10,8 @@ router.get('/login', handleLogin);
 
 router.get('/callback', handleCallback);
 
-router.get('/:id', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../views/home.html'));
+router.get('/:id', (_request: Request, response: Response) => {
+    response.sendFile(path.resolve(__dirname, '../views/home.html'));
 });
 
 export default router;
