@@ -11,7 +11,6 @@ const port = 3000;
 app.use(json());
 connect(process.env.DATABASE_URL!, {});
 app.use(helmet());
-app.use(cors());
 
 app.use('/api', apiRoutes);
 app.use('/', routes);
