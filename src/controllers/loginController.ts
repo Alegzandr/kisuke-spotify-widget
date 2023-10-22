@@ -65,7 +65,7 @@ export const handleCallback = async (request: Request, response: Response) => {
 
 export const refreshAccessToken = async (refresh_token: string) => {
     const base64credentials = Buffer.from(
-        process.env.SPOTIFY_CLIENT_ID + ':' + process.env.SPOTIFY_CLIENT_SECRET
+        process.env.CLIENT_ID + ':' + process.env.CLIENT_SECRET
     ).toString('base64');
 
     try {

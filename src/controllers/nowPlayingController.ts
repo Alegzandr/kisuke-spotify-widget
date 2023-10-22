@@ -20,7 +20,7 @@ export const handleNowPlaying = async (
             refresh_token &&
             expires_in &&
             expires_at &&
-            new Date() >= new Date(expires_at)
+            new Date() >= new Date(expires_at as Date)
         ) {
             access_token = await refreshAccessToken(refresh_token);
 
