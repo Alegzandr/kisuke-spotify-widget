@@ -26,7 +26,6 @@ export const handleNowPlaying = async (
 
         if (fetchResponse.ok) {
             const data = await fetchResponse.json();
-            console.log(data);
             response.json(data);
         } else {
             response.sendStatus(fetchResponse.status);
