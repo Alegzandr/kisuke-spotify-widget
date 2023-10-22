@@ -42,12 +42,45 @@ export const handleCallback = async (request: Request, response: Response) => {
 
         const data = await fetchResponse.json();
         const access_token = data.access_token;
+        const refresh_token = data.refresh_token;
+        const expires_in = data.expires_in;
+
+        const expires_at = new Date();
+        expires_at.setSeconds(expires_at.getSeconds() + expires_in);
 
         const uuid = uuidv4();
-        await saveToken(uuid, access_token);
+        await saveToken(
+            uuid,
+            access_token,
+            refresh_token,
+            expires_in,
+            expires_at
+        );
 
         response.redirect(`/now-playing/${uuid}`);
     } catch (error) {
         response.send(error);
+    }
+};
+
+export const refreshAccessToken = async (refresh_token: string) => {
+    const base64credentials = Buffer.from(
+        process.env.SPOTIFY_CLIENT_ID + ':' + process.env.SPOTIFY_CLIENT_SECRET
+    ).toString('base64');
+
+    try {
+        const response = await fetch('https://accounts.spotify.com/api/token', {
+            method: 'POST',
+            headers: {
+                Authorization: 'Basic ' + base64credentials,
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: `grant_type=refresh_token&refresh_token=${refresh_token}`,
+        });
+
+        const data = await response.json();
+        return data.access_token;
+    } catch (error) {
+        throw error;
     }
 };
