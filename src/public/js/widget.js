@@ -10,11 +10,9 @@ window.addEventListener('load', () => {
         const response = await fetch(`/api/now-playing/${id}`);
         const data = await response.json();
 
-        console.log(data);
-
-        coverElement.styles.backgroundImage = `url(${data.cover})`;
-        artistElement.innerText = data.artist;
-        titleElement.innerText = data.title;
+        coverElement.styles.backgroundImage = `url(${data.item.album.images[0].url})`;
+        artistElement.innerText = data.item.artists[0].name;
+        titleElement.innerText = data.item.name;
     };
 
     setInterval(fetchNowPlaying, 5000);
