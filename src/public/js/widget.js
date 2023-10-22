@@ -10,7 +10,7 @@ window.addEventListener('load', () => {
         const response = await fetch(`/api/now-playing/${id}`);
         const data = await response.json();
 
-        coverElement.styles.backgroundImage = `url(${data.item.album.images[0].url})`;
+        coverElement.style.backgroundImage = `url(${data.item.album.images[0].url})`;
         artistElement.innerText = data.item.artists[0].name;
         titleElement.innerText = data.item.name;
     };

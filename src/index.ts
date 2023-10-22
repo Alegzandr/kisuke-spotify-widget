@@ -1,7 +1,6 @@
 import express, { json } from 'express';
 import dotenv from 'dotenv';
 import { connect } from 'mongoose';
-import helmet from 'helmet';
 import routes from './routes';
 import apiRoutes from './routes/apiRoutes';
 
@@ -12,7 +11,7 @@ const port = 3000;
 
 app.use(json());
 connect(process.env.DATABASE_URL!, {});
-app.use(helmet());
+app.disable('x-powered-by');
 
 app.use('/api', apiRoutes);
 app.use('/', routes);
