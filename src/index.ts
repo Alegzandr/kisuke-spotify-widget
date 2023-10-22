@@ -1,9 +1,11 @@
 import express, { json } from 'express';
+import dotenv from 'dotenv';
 import { connect } from 'mongoose';
 import helmet from 'helmet';
-import cors from 'cors';
 import routes from './routes';
 import apiRoutes from './routes/apiRoutes';
+
+dotenv.config();
 
 const app = express();
 const port = 3000;
