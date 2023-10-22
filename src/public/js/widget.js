@@ -6,9 +6,11 @@ window.addEventListener('load', () => {
     const titleElement = document.querySelector('#title');
 
     const fetchNowPlaying = async () => {
-        const id = window.location.pathname.split('/').pop();
+        const id = window.location.pathname.split('/now-playing/').pop();
         const response = await fetch(`/api/now-playing/${id}`);
         const data = await response.json();
+
+        console.log(data);
 
         coverElement.styles.backgroundImage = `url(${data.cover})`;
         artistElement.innerText = data.artist;

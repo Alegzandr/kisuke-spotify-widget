@@ -26,7 +26,8 @@ export const handleNowPlaying = async (
 
         if (fetchResponse.ok) {
             const data = await fetchResponse.json();
-            response.json({ song: data.item.name });
+            console.log(data);
+            response.json(data);
         } else {
             response.sendStatus(fetchResponse.status);
         }
