@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Widget</title>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/styles/home.css">
+    <script type="module" src="/js/home.js"></script>
+</head>
+
+<body>
+    <main>
+        <div class="auth">
+            <h1 class="auth__title">Authentification</h1>
+
+            <a class="auth__login" id="login" href="/login">Se connecter avec
+                Spotify</a>
+        </div>
+
+        <div class="overlays" id="overlays">
+            <h1 class="overlays__title">Overlays récents</h1>
+
+            <ul class="overlays__list" id="overlays-list"></ul>
+        </div>
+    </main>
+</body>
+
+</html>

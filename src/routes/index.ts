@@ -14,4 +14,8 @@ router.get('/now-playing/:id', (_request: Request, response: Response) => {
     response.sendFile(path.resolve(__dirname, '../views/widget.html'));
 });
 
+router.get('/', (_request: Request, response: Response) =>
+    response.sendFile(path.resolve(__dirname, '../views/home.html'))
+);
+
 export default router;

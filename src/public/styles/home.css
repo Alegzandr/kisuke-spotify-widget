@@ -1,0 +1,86 @@
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: Lato, sans-serif;
+    font-weight: 400;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+    color: #000000;
+    text-decoration: none;
+}
+
+.overlays {
+    display: none;
+}
+
+main {
+    width: 80vw;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.auth {
+    margin-top: 5vh;
+}
+
+.auth__login {
+    display: inline-block;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    background-color: #1ed760;
+    font-weight: 700;
+    transition: all 0.2s ease-in-out;
+}
+
+.login-button:hover {
+    background-color: #1db954;
+}
+
+.login-button:active {
+    background-color: #1aa34a;
+}
+
+.overlays {
+    margin-top: 2.5vh;
+}
+
+.overlays__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.overlays__list a {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: #f2f2f2;
+    transition: all 0.2s ease-in-out;
+    display: inline-block;
+    max-width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.overlays__list a:hover {
+    background-color: #e6e6e6;
+}
+
+.overlays__list a:active {
+    background-color: #d9d9d9;
+}
