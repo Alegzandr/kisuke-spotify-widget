@@ -1,5 +1,48 @@
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: Lato, sans-serif;
+    font-weight: 400;
+    font-size: 4vw;
+    color: #ffffff;
+}
+
+main {
+    width: 96vw;
+    display: flex;
+    gap: 2vw;
+    padding: 2vw;
+    margin: 2vw;
+    box-sizing: border-box;
+    background: #2c3e50;
+    background: linear-gradient(0deg, #2c3e50, #bdc3c7);
+    border-radius: 2vw;
+    box-shadow: 0 0 1vw 1vw rgba(0, 0, 0, 0.2);
+}
+
 .cover {
-    background-color: #000;
-    width: 640px;
-    height: 640px;
+    background-color: #000000;
+    background-size: contain;
+    background-position: center;
+    width: 25vw;
+    height: 20vw;
+    border-radius: 2vw;
+}
+
+.informations {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.informations__title {
+    font-weight: 700;
+    font-size: 7vw;
+    width: 70vw;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

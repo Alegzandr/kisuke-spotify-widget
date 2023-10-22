@@ -15,5 +15,6 @@ window.addEventListener('load', () => {
         titleElement.innerText = data.item.name;
     };
 
+    fetchNowPlaying();
     setInterval(fetchNowPlaying, 5000);
 });
