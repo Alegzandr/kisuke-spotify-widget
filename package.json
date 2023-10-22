@@ -1,8 +1,8 @@
 {
     "name": "kisuke-spotify-widget",
     "scripts": {
-        "start": "tsx src/index.ts",
-        "dev": "tsx watch src/index.ts"
+        "start": "ts-node ./src/index.ts",
+        "dev": "nodemon"
     },
     "keywords": [],
     "author": "Alegzandr",
@@ -16,8 +16,11 @@
     "devDependencies": {
         "@types/cors": "^2.8.15",
         "@types/express": "^4.17.20",
+        "@types/node": "^20.8.7",
         "@types/uuid": "^9.0.6",
-        "tsx": "^3.14.0"
+        "nodemon": "^3.0.1",
+        "ts-node": "^10.9.1",
+        "typescript": "^5.2.2"
     },
     "prettier": {
         "tabWidth": 4,
