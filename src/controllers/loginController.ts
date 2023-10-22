@@ -12,7 +12,7 @@ export const handleLogin = (_request: Request, response: Response) => {
         'https://accounts.spotify.com/authorize' +
             '?response_type=code' +
             '&client_id=' +
-            process.env.SPOTIFY_CLIENT_ID +
+            process.env.CLIENT_ID +
             (scopes ? '&scope=' + encodeURIComponent(scopes) : '') +
             '&redirect_uri=' +
             encodeURIComponent(process.env.REDIRECT_URI as string)
@@ -22,7 +22,7 @@ export const handleLogin = (_request: Request, response: Response) => {
 export const handleCallback = async (request: Request, response: Response) => {
     const code = request.query.code || null;
     const base64credentials = Buffer.from(
-        process.env.SPOTIFY_CLIENT_ID + ':' + process.env.SPOTIFY_CLIENT_SECRET
+        process.env.CLIENT_ID + ':' + process.env.CLIENT_SECRET
     ).toString('base64');
 
     try {
