@@ -1,10 +1,10 @@
 import ColorThief from '../vendor/color-thief-2.4.0/color-thief.mjs';
 
-const targetDiv = document.querySelector('main');
+const coverElement = document.querySelector('main');
 
 const setGradient = (primaryColor, secondaryColor) => {
     const gradientStyle = `linear-gradient(to top, ${primaryColor}, ${secondaryColor})`;
-    targetDiv.style.background = gradientStyle;
+    coverElement.style.background = gradientStyle;
 };
 
 const handleGradient = (coverURL) => {
@@ -13,13 +13,13 @@ const handleGradient = (coverURL) => {
     temporaryImage.crossOrigin = 'Anonymous';
 
     temporaryImage.onload = () => {
-        const colors = colorThief.getPalette(temporaryImage, 2);
+        const colors = colorThief.getPalette(temporaryImage, 3);
 
         const primaryColor = `#${colors[1]
             .map((c) => c.toString(16).padStart(2, '0'))
             .join('')}`;
 
-        const secondaryColor = `#${colors[0]
+        const secondaryColor = `#${colors[2]
             .map((c) => c.toString(16).padStart(2, '0'))
             .join('')}`;
 

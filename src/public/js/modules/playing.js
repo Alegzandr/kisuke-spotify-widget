@@ -1,5 +1,6 @@
 import handleGradient from './gradient.js';
 
+const coverBackgroundElement = document.querySelector('#cover-background');
 const coverElement = document.querySelector('#cover');
 const artistElement = document.querySelector('#artist');
 const titleElement = document.querySelector('#title');
@@ -31,6 +32,7 @@ const fetchNowPlaying = async () => {
     const coverURL = data.item.album.images[0].url;
     handleGradient(coverURL);
     coverElement.style.backgroundImage = `url(${coverURL})`;
+    coverBackgroundElement.style.backgroundImage = `url(${coverURL})`;
     artistElement.innerText = data.item.artists[0].name;
     titleElement.innerText = data.item.name;
 };
