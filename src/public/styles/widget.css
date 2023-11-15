@@ -19,7 +19,7 @@ main {
     box-sizing: border-box;
     background: #2c3e50;
     background: linear-gradient(0deg, #2c3e50, #bdc3c7);
-    border-radius: 2vw;
+    border-radius: 12.5vw;
     box-shadow: 0 0 1vw 1vw rgba(0, 0, 0, 0.2);
 }
 
@@ -29,7 +29,8 @@ main {
     background-position: center;
     width: 25vw;
     height: 20vw;
-    border-radius: 2vw;
+    border-radius: 50%;
+    box-shadow: 0 0 0.5vw 0.5vw rgba(0, 0, 0, 0.2);
 }
 
 .informations {
