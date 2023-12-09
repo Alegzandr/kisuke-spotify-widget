@@ -2,7 +2,10 @@
     "name": "kisuke-spotify-widget",
     "scripts": {
         "start": "ts-node ./src/index.ts",
-        "dev": "nodemon"
+        "dev": "nodemon",
+        "build": "tsc",
+        "postbuild": "cp -R ./src/public ./dist/public && cp -R ./src/views ./dist/views",
+        "prod": "npm run build && npm run postbuild && node ./dist/index.js"
     },
     "keywords": [],
     "author": "Alegzandr",
