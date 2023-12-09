@@ -46,6 +46,15 @@ h1 {
     transition: all 0.2s ease-in-out;
 }
 
+.auth__clear {
+    display: inline-block;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    background-color: #b0b0b0;
+    font-weight: 700;
+    transition: all 0.2s ease-in-out;
+}
+
 .login-button:hover {
     background-color: #1db954;
 }
